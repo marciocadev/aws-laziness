@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-//import { SourceCode } from 'projen';
 import { Laziness } from '../../../laziness/laziness';
 import { LazyDynamoDBEntityProps } from './lazy-dinamodb-entity';
 
@@ -42,6 +41,15 @@ export class LazyDynamoDBSchema extends Laziness {
       model.line('* @attribute');
       model.line('*/');
       model.line(`readonly ${props.sortKey.key}: ${props.sortKey.type}; // sort key`);
+    }
+    if (props.fields) {
+      for (const field of props.fields) {
+        model.line('/**');
+        model.line('*');
+        model.line('* @attribute');
+        model.line('*/');
+        model.line(`readonly ${field.key}?: ${field.type};`);
+      }
     }
     model.close('}');
   }
