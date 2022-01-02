@@ -1,11 +1,19 @@
 {
   "name": "aws-laziness",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marciocadev/mca-lazyless.git"
+  },
+  "bin": {
+    "aws-laziness": "lib/index.js"
+  },
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
     "default": "npx projen default",
+    "docgen": "npx projen docgen",
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "post-compile": "npx projen post-compile",
@@ -21,8 +29,10 @@
     "projen": "npx projen"
   },
   "devDependencies": {
+    "@types/cli-color": "^2.0.2",
     "@types/jest": "^27.4.0",
     "@types/node": "^12",
+    "@types/node-notifier": "^8.0.2",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "eslint": "^8",
@@ -37,8 +47,20 @@
     "standard-version": "^9",
     "ts-jest": "^27.1.2",
     "ts-node": "^9",
+    "typedoc": "^0.21.4",
     "typescript": "^4.5.4"
   },
+  "dependencies": {
+    "cli-color": "^2.0.1",
+    "commander": "^8.3.0",
+    "node-notifier": "^10.0.0",
+    "projen": "^0.47.15"
+  },
+  "bundledDependencies": [
+    "cli-color",
+    "commander",
+    "node-notifier"
+  ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",
