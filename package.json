@@ -29,6 +29,8 @@
     "projen": "npx projen"
   },
   "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.45.0",
+    "@aws-sdk/util-dynamodb": "^3.45.0",
     "@types/cli-color": "^2.0.2",
     "@types/jest": "^27.4.0",
     "@types/node": "^12",

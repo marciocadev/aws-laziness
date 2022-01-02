@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { Laziness } from '../../../laziness/laziness';
-import { LazyDynamoDBEntityProps } from './lazy-dinamodb-entity';
+import { Laziness } from '../../../laziness';
+import { LazyDynamoDBEntityProps } from './lazy-entity';
 
 export class LazyDynamoDBSchema extends Laziness {
   readonly entityName: string;

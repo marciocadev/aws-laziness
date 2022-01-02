@@ -13,6 +13,8 @@ const project = new typescript.TypeScriptProject({
   },
   deps: ['projen'],
   devDeps: [
+    '@aws-sdk/client-dynamodb',
+    '@aws-sdk/util-dynamodb',
     '@types/node-notifier',
     '@types/cli-color',
   ],
