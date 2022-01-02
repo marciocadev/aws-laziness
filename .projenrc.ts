@@ -23,6 +23,10 @@ const project = new typescript.TypeScriptProject({
   ],
 
   codeCov: true,
+  gitpod: true,
+  jestOptions: {
+    coverageText: false,
+  },
   docgen: true,
   eslint: true,
   tsconfig: {
