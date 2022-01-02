@@ -8,4 +8,4 @@
 [![codecov](https://codecov.io/gh/marciocadev/aws-laziness/branch/main/graph/badge.svg?token=U1R3MKJWJO)](https://codecov.io/gh/marciocadev/aws-laziness)
 ![Commit activity](https://img.shields.io/github/commit-activity/w/marciocadev/aws-laziness)
 
-Create some source code for lazy people **(this is US :neckbeard:)**
+Create some source code for lazy people **(this is US :wink:)**
