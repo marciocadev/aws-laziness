@@ -48,16 +48,4 @@ const project = new typescript.TypeScriptProject({
   },
 });
 
-// new JsonFile(project, './src/version-aws-laziness.json', {
-//   obj: { version: version },
-//   readonly: false,
-//   marker: false,
-// });
-
-const version = project.addTask('version-app');
-version.exec('cp package.json src/version.json');
-project.preCompileTask.spawn(version);
-
-project.addGitIgnore('/src/version.json');
-
 project.synth();
