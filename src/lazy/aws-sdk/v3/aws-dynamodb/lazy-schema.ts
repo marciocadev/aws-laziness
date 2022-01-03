@@ -22,7 +22,7 @@ export class LazyDynamoDBSchema extends Project {
     const basename = this.entityName.toLowerCase();
     let file = '';
     if (this.pathFile) {
-      file = `${this.pathFile}/${basename}-package/lambda-fns/${basename}/model.ts`;
+      file = `${this.pathFile}/lambda-fns/${basename}/model.ts`;
     } else {
       file = `lambda-fns/${basename}/model.ts`;
     }
