@@ -6,7 +6,7 @@ describe('LazyDynamoDBSchema tests', () => {
   let lazy: LazyDynamoDBSchema;
 
   beforeAll(() => {
-    lazy = new LazyDynamoDBSchema('schema', 'Test', 'test/new');
+    lazy = new LazyDynamoDBSchema('schema', 'Test', 'test/files');
     lazy.synth();
   });
 
