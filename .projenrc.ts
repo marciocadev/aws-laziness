@@ -47,7 +47,7 @@ const project = new typescript.TypeScriptProject({
   },
 });
 
-new JsonFile(project, './src/version.json', {
+new JsonFile(project, './src/version-aws-laziness.json', {
   obj: { version: version },
   readonly: false,
   marker: false,
