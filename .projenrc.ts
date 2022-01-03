@@ -30,7 +30,9 @@ const project = new typescript.TypeScriptProject({
   ],
 
   mutableBuild: true,
+  releaseFailureIssue: true,
 
+  prettier: true,
   codeCov: true,
   gitpod: true,
   jestOptions: {
@@ -51,5 +53,9 @@ const project = new typescript.TypeScriptProject({
 //   readonly: false,
 //   marker: false,
 // });
+
+const version = project.addTask('version-app');
+version.exec('cp package.json src/version.json');
+project.preCompileTask.spawn(version);
 
 project.synth();
