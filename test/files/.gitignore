@@ -4,4 +4,3 @@ node_modules/
 !/.projen/tasks.json
 !/.projen/deps.json
 !/.projen/files.json
-!/lambda-fns/user/model.ts

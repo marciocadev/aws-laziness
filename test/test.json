@@ -1,0 +1,7 @@
+{
+  "partitionKey": { "key": "username", "type": "string", "describe": "Partition Key for User" },
+  "fields": [
+    { "key": "name", "type": "string", "describe": "User name" },
+    { "key": "age", "type": "number" }
+  ]
+}
