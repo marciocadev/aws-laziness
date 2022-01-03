@@ -17,3 +17,7 @@ file: {
   readonly: true
 }
 */
+
+/*
+ts-node ../src/index.ts dynamodb-schema User -j test.json -p lixo
+*/

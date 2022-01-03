@@ -29,6 +29,9 @@ export class LazyDynamoDBSchema extends Laziness {
     const model = this.ts(file);
     model.open(`export interface ${this.entityName} {`);
     model.line('/**');
+    if (props.partitionKey.describe) {
+      model.line(`* ${props.partitionKey.describe}`);
+    }
     model.line(`* **_${props.partitionKey.key}_** field is the **partition key**`);
     model.line('*');
     model.line('* @attribute');
@@ -36,6 +39,9 @@ export class LazyDynamoDBSchema extends Laziness {
     model.line(`readonly ${props.partitionKey.key}: string; // key`);
     if (props.sortKey) {
       model.line('/**');
+      if (props.sortKey.describe) {
+        model.line(`* ${props.sortKey.describe}`);
+      }
       model.line(`* **_${props.sortKey.key}_** field is the **sort key**`);
       model.line('*');
       model.line('* @attribute');
@@ -45,6 +51,9 @@ export class LazyDynamoDBSchema extends Laziness {
     if (props.fields) {
       for (const field of props.fields) {
         model.line('/**');
+        if (field.describe) {
+          model.line(`* ${field.describe}`);
+        }
         model.line('*');
         model.line('* @attribute');
         model.line('*/');
