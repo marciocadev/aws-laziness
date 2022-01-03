@@ -33,7 +33,7 @@ program
         fs.unlinkSync(options.path + '/.gitignore');
         fs.rmdirSync(options.path + '/.projen', { recursive: true });
       } else {
-        fs.unlinkSync('/.gitignore');
+        fs.unlinkSync('.gitignore');
         fs.rmdirSync('.projen', { recursive: true });
       }
     }
