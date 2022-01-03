@@ -42,6 +42,7 @@ junit.xml
 !/.github/workflows/release.yml
 !/.mergify.yml
 !/.github/pull_request_template.md
+!/.prettierrc.json
 !/test/
 !/tsconfig.json
 !/tsconfig.dev.json
@@ -49,5 +50,4 @@ junit.xml
 /lib
 /dist/
 !/.eslintrc.json
-!/./src/version-aws-laziness.json
 !/.github/workflows/upgrade-main.yml
