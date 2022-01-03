@@ -49,5 +49,4 @@ junit.xml
 /lib
 /dist/
 !/.eslintrc.json
-!/./src/version-aws-laziness.json
 !/.github/workflows/upgrade-main.yml
