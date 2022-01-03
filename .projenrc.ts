@@ -54,6 +54,6 @@ const project = new typescript.TypeScriptProject({
 
 const version = project.addTask('version-app');
 version.exec('cp package.json src/package.json');
-project.postCompileTask.spawn(version);
+project.preCompileTask.spawn(version);
 
 project.synth();
