@@ -131,12 +131,7 @@
     },
     "pre-compile": {
       "name": "pre-compile",
-      "description": "Prepare the project for compilation",
-      "steps": [
-        {
-          "spawn": "version-app"
-        }
-      ]
+      "description": "Prepare the project for compilation"
     },
     "release": {
       "name": "release",
@@ -270,14 +265,6 @@
         },
         {
           "exec": "npx projen"
-        }
-      ]
-    },
-    "version-app": {
-      "name": "version-app",
-      "steps": [
-        {
-          "exec": "cp package.json src/version.json"
         }
       ]
     },

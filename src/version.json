@@ -25,7 +25,6 @@
     "unbump": "npx projen unbump",
     "upgrade": "npx projen upgrade",
     "upgrade-projen": "npx projen upgrade-projen",
-    "version-app": "npx projen version-app",
     "watch": "npx projen watch",
     "projen": "npx projen"
   },
