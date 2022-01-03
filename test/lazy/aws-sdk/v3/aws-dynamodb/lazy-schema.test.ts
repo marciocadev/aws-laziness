@@ -1,6 +1,6 @@
-import * as path from 'path';
+// import * as path from 'path';
 import { LazyDynamoDBSchema } from '../../../../../src/lazy/aws-sdk/v3/aws-dynamodb/lazy-schema';
-import * as fs from 'fs-extra';
+// import * as fs from 'fs-extra';
 
 describe('LazyDynamoDBSchema tests', () => {
   let lazy: LazyDynamoDBSchema;

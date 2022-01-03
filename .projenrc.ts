@@ -10,8 +10,6 @@ const project = new typescript.TypeScriptProject({
   release: true,
   releaseToNpm: true,
 
-  mutableBuild: false,
-
   bin: {
     'aws-laziness': 'lib/index.js',
   },
