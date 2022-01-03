@@ -25,7 +25,7 @@ program
     if (options.jsonModel) {
       data = JSON.parse(fs.readFileSync(path.resolve(options.jsonModel), 'utf8'));
 
-      const lazy = new LazyDynamoDBSchema('schema', name, options.path);
+      const lazy = new LazyDynamoDBSchema(name, options.path);
       lazy.createModel(data);
       lazy.synth();
     }
