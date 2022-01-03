@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-import { Laziness } from '../../../laziness';
+import { Project, SourceCode } from 'projen';
 import { LazyDynamoDBEntityProps } from './lazy-entity';
 
-export class LazyDynamoDBSchema extends Laziness {
+export class LazyDynamoDBSchema extends Project {
   readonly entityName: string;
   readonly pathFile?: string;
 
   constructor(title: string, entityName: string, pathFile?: string) {
-    super(title);
+    super({ name: title });
     if (pathFile) this.pathFile = pathFile;
     if (entityName.length >= 1) {
       this.entityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
@@ -26,7 +26,7 @@ export class LazyDynamoDBSchema extends Laziness {
     } else {
       file = `lambda-fns/${basename}/model.ts`;
     }
-    const model = this.ts(file);
+    const model = new SourceCode(this, file);
     model.open(`export interface ${this.entityName} {`);
     model.line('/**');
     if (props.partitionKey.describe) {
@@ -61,5 +61,6 @@ export class LazyDynamoDBSchema extends Laziness {
       }
     }
     model.close('}');
+    this.synth();
   }
 }
