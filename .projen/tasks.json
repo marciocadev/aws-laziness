@@ -126,6 +126,9 @@
       "steps": [
         {
           "spawn": "docgen"
+        },
+        {
+          "spawn": "version-app"
         }
       ]
     },
@@ -265,6 +268,14 @@
         },
         {
           "exec": "npx projen"
+        }
+      ]
+    },
+    "version-app": {
+      "name": "version-app",
+      "steps": [
+        {
+          "exec": "cp package.json src/package.json"
         }
       ]
     },
