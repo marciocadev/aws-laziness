@@ -13,6 +13,10 @@
       "type": "build"
     },
     {
+      "name": "@types/fs-extra",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -103,6 +107,10 @@
     },
     {
       "name": "commander",
+      "type": "bundled"
+    },
+    {
+      "name": "fs-extra",
       "type": "bundled"
     },
     {

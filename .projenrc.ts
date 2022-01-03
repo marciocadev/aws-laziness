@@ -13,17 +13,21 @@ const project = new typescript.TypeScriptProject({
   bin: {
     'aws-laziness': 'lib/index.js',
   },
-  deps: ['projen'],
+  deps: [
+    'projen',
+  ],
   devDeps: [
     '@aws-sdk/client-dynamodb',
     '@aws-sdk/util-dynamodb',
     '@types/node-notifier',
     '@types/cli-color',
+    '@types/fs-extra',
   ],
   bundledDeps: [
     'cli-color',
     'node-notifier',
     'commander',
+    'fs-extra',
   ],
 
   codeCov: true,
