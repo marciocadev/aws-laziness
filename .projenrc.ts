@@ -30,6 +30,8 @@ const project = new typescript.TypeScriptProject({
     'fs-extra',
   ],
 
+  mutableBuild: true,
+
   codeCov: true,
   gitpod: true,
   jestOptions: {
