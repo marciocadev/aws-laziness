@@ -47,6 +47,7 @@ const project = new typescript.TypeScriptProject({
 
 new JsonFile(project, './src/version.json', {
   obj: { version: version },
+  readonly: false,
   marker: false,
 });
 
