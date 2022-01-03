@@ -11,7 +11,7 @@ describe('LazyDynamoDBSchema tests', () => {
   });
 
   test('test creation of LazyDynmoDBSchema', () => {
-    expect(lazy.name).toBe('schema');
+    expect(lazy.name).toBe('Test');
     expect(lazy.entityName).toBe('Test');
   });
 
