@@ -1,5 +1,4 @@
-import { version } from './package.json';
-import { typescript, JsonFile } from 'projen';
+import { typescript } from 'projen';
 
 const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: 'main',
@@ -47,10 +46,10 @@ const project = new typescript.TypeScriptProject({
   },
 });
 
-new JsonFile(project, './src/version-aws-laziness.json', {
-  obj: { version: version },
-  readonly: false,
-  marker: false,
-});
+// new JsonFile(project, './src/version-aws-laziness.json', {
+//   obj: { version: version },
+//   readonly: false,
+//   marker: false,
+// });
 
 project.synth();
