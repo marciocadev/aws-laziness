@@ -61,6 +61,6 @@ export class LazyDynamoDBSchema extends Project {
       }
     }
     model.close('}');
-    this.synth();
+    return model;
   }
 }

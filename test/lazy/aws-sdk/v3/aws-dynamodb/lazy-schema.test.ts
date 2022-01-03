@@ -1,8 +1,15 @@
-import { LazyDynamoDBSchema2 } from '../../../../../src/lazy/aws-sdk/v3/aws-dynamodb/lazy-schema-2';
+import { LazyDynamoDBSchema } from '../../../../../src/lazy/aws-sdk/v3/aws-dynamodb/lazy-schema';
 
-test('teste', () => {
-  const lazy = new LazyDynamoDBSchema2('schema', 'Test', '/home/marcio/marciocadev/aws-laziness/test/new');
-  lazy.createModel({
-    partitionKey: { key: 'company', type: 'string' },
+
+describe('LazyDynamoDBSchema tests', () => {
+  let lazy: LazyDynamoDBSchema;
+
+  beforeAll(() => {
+    lazy = new LazyDynamoDBSchema('schema', 'Test', 'new');
+  });
+
+  test('test creation of LazyDynmoDBSchema', () => {
+    expect(lazy.name).toBe('schema');
+    expect(lazy.entityName).toBe('Test');
   });
 });
