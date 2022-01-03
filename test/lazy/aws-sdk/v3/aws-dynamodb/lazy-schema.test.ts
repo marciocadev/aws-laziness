@@ -6,12 +6,12 @@ describe('LazyDynamoDBSchema tests', () => {
   let lazy: LazyDynamoDBSchema;
 
   beforeAll(() => {
-    lazy = new LazyDynamoDBSchema('schema', 'Test', 'test/files');
+    lazy = new LazyDynamoDBSchema('Test', 'test/files');
     //lazy.synth();
   });
 
   test('test creation of LazyDynmoDBSchema', () => {
-    expect(lazy.name).toBe('schema');
+    expect(lazy.name).toBe('Test');
     expect(lazy.entityName).toBe('Test');
   });
 
