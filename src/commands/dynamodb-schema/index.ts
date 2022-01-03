@@ -28,6 +28,14 @@ program
       const lazy = new LazyDynamoDBSchema(name, options.path);
       lazy.createModel(data);
       lazy.synth();
+
+      if (options.path) {
+        fs.unlinkSync(options.path + '/.gitignore');
+        fs.rmdirSync(options.path + '/.projen', { recursive: true });
+      } else {
+        fs.unlinkSync(options.path + '/.gitignore');
+        fs.rmdirSync('.projen', { recursive: true });
+      }
     }
     console.log(data);
   });
