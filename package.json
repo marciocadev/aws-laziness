@@ -29,7 +29,10 @@
     "projen": "npx projen"
   },
   "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.45.0",
+    "@aws-sdk/util-dynamodb": "^3.45.0",
     "@types/cli-color": "^2.0.2",
+    "@types/fs-extra": "^9.0.13",
     "@types/jest": "^27.4.0",
     "@types/node": "^12",
     "@types/node-notifier": "^8.0.2",
@@ -38,7 +41,7 @@
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-import": "^2.25.4",
     "jest": "^27.4.5",
     "jest-junit": "^13",
     "json-schema": "^0.4.0",
@@ -53,12 +56,14 @@
   "dependencies": {
     "cli-color": "^2.0.1",
     "commander": "^8.3.0",
+    "fs-extra": "^10.0.0",
     "node-notifier": "^10.0.0",
     "projen": "^0.47.15"
   },
   "bundledDependencies": [
     "cli-color",
     "commander",
+    "fs-extra",
     "node-notifier"
   ],
   "main": "lib/index.js",

@@ -1,4 +1,6 @@
-import { typescript } from 'projen';
+import { version } from './package.json';
+import { typescript, JsonFile } from 'projen';
+
 const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: 'main',
   name: 'aws-laziness',
@@ -11,16 +13,24 @@ const project = new typescript.TypeScriptProject({
   bin: {
     'aws-laziness': 'lib/index.js',
   },
-  deps: ['projen'],
+  deps: [
+    'projen',
+  ],
   devDeps: [
+    '@aws-sdk/client-dynamodb',
+    '@aws-sdk/util-dynamodb',
     '@types/node-notifier',
     '@types/cli-color',
+    '@types/fs-extra',
   ],
   bundledDeps: [
     'cli-color',
     'node-notifier',
     'commander',
+    'fs-extra',
   ],
+
+  mutableBuild: true,
 
   codeCov: true,
   gitpod: true,
@@ -36,4 +46,11 @@ const project = new typescript.TypeScriptProject({
     },
   },
 });
+
+new JsonFile(project, './src/version-aws-laziness.json', {
+  obj: { version: version },
+  readonly: false,
+  marker: false,
+});
+
 project.synth();
