@@ -30,6 +30,8 @@ const project = new typescript.TypeScriptProject({
     'fs-extra',
   ],
 
+  mutableBuild: true,
+
   codeCov: true,
   gitpod: true,
   jestOptions: {
@@ -45,9 +47,10 @@ const project = new typescript.TypeScriptProject({
   },
 });
 
-new JsonFile(project, './src/version.json', {
-  obj: { version: version },
-  marker: false,
-});
+// new JsonFile(project, './src/version.json', {
+//   obj: { version: version },
+//   readonly: false,
+//   marker: false,
+// });
 
 project.synth();
