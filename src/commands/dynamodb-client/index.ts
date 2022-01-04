@@ -3,11 +3,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { program, Argument } from 'commander';
-import { LazyDynamoDBSchema } from '../../lazy/aws-sdk/v3/aws-dynamodb/lazy-schema';
+import { LazyDynamoDBClient } from '../../lazy/aws-sdk/v3/aws-dynamodb/lazy-client';
 
 program
-  .command('dynamodb-schema')
-  .alias('db-schema')
+  .command('dynamodb-client')
+  .alias('db-client')
   .addArgument(new Argument('<name>', 'data model name'))
   .option('-p, --path <path>', 'path to create files')
   .option('-j, --json-model <file>', 'json file with description of the table')
@@ -21,8 +21,8 @@ program
     if (options.jsonModel) {
       data = JSON.parse(fs.readFileSync(path.resolve(options.jsonModel), 'utf8'));
 
-      const lazy = new LazyDynamoDBSchema(name, options.path);
-      lazy.createModel(data);
+      const lazy = new LazyDynamoDBClient(name, options.path);
+      lazy.createClient(data);
       lazy.synth();
 
       if (options.path) {
