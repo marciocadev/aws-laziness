@@ -1,16 +1,16 @@
 // import * as path from 'path';
-import { LazyDynamoDBSchema } from '../../../../../src/lazy/aws-sdk/v3/aws-dynamodb/lazy-schema';
+import { LazyDynamoDBModel } from '../../../../../src/lazy/aws-sdk/v3/aws-dynamodb/lazy-model';
 // import * as fs from 'fs-extra';
 
 describe('LazyDynamoDBSchema tests', () => {
-  let lazy: LazyDynamoDBSchema;
+  let lazy: LazyDynamoDBModel;
 
   beforeAll(() => {
-    lazy = new LazyDynamoDBSchema('Test', 'test/files');
+    lazy = new LazyDynamoDBModel('Test', 'test/files');
     //lazy.synth();
   });
 
-  test('test creation of LazyDynmoDBSchema', () => {
+  test('test creation of LazyDynamoDBModel', () => {
     expect(lazy.name).toBe('Test');
     expect(lazy.entityName).toBe('Test');
   });

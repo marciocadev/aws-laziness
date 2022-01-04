@@ -21,6 +21,8 @@ const project = new typescript.TypeScriptProject({
     '@aws-sdk/client-dynamodb',
     '@aws-sdk/util-dynamodb',
     '@types/node-notifier',
+    '@types/typescript',
+    '@types/inquirer',
     '@types/cli-color',
     '@types/fs-extra',
   ],
@@ -28,13 +30,14 @@ const project = new typescript.TypeScriptProject({
     'cli-color',
     'node-notifier',
     'commander',
+    'inquirer',
     'fs-extra',
   ],
 
   mutableBuild: true,
   releaseFailureIssue: true,
 
-  prettier: true,
+  // prettier: true,
   codeCov: true,
   gitpod: true,
   jestOptions: {

@@ -10,7 +10,8 @@ export class LazyDynamoDBClient extends Project {
   constructor(entityName: string, pathFile?: string) {
     super({ name: entityName, outdir: pathFile });
     if (entityName.length >= 1) {
-      this.entityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
+      this.entityName =
+        entityName.charAt(0).toUpperCase() + entityName.slice(1);
     } else {
       this.entityName = entityName.toUpperCase();
     }
@@ -28,18 +29,24 @@ export class LazyDynamoDBClient extends Project {
     client.line('UpdateItemCommand, UpdateItemCommandInput,');
     client.line('GetItemCommand, GetItemCommandInput,');
     client.line('DeleteItemCommand, DeleteItemCommandInput,');
-    client.close('} from \'@aws-sdk/client-dynamodb\';');
-    client.line('import { marshall } from \'@aws-sdk/util-dynamodb\';');
+    client.close("} from '@aws-sdk/client-dynamodb';");
+    client.line("import { marshall } from '@aws-sdk/util-dynamodb';");
     client.line(`import { ${this.entityName} } from \'./model\';`);
     client.line('');
     client.open(`export class ${this.entityName}Client {`);
-    client.line('readonly client = new DynamoDBClient({ region: process.env.AWS_REGION });');
+    client.line(
+      'readonly client = new DynamoDBClient({ region: process.env.AWS_REGION });',
+    );
     client.line('');
     // create get item function
     if (props && props.sortKey) {
-      client.open(`public async getItem(partitionKey: ${props.partitionKey.type}, sortKey: ${props.sortKey.type}) {`);
+      client.open(
+        `public async getItem(partitionKey: ${props.partitionKey.type}, sortKey: ${props.sortKey.type}) {`,
+      );
     } else {
-      client.open(`public async getItem(partitionKey: ${props.partitionKey.type}) {`);
+      client.open(
+        `public async getItem(partitionKey: ${props.partitionKey.type}) {`,
+      );
     }
     client.line('let keyObj: { [key: string]: any } = {};');
     client.line(`keyObj.${props.partitionKey.key} = partitionKey;`);
@@ -55,9 +62,13 @@ export class LazyDynamoDBClient extends Project {
     client.line('');
     // create delete item function
     if (props && props.sortKey) {
-      client.open(`public async deleteItem(partitionKey: ${props.partitionKey.type}, sortKey: ${props.sortKey.type}) {`);
+      client.open(
+        `public async deleteItem(partitionKey: ${props.partitionKey.type}, sortKey: ${props.sortKey.type}) {`,
+      );
     } else {
-      client.open(`public async deleteItem(partitionKey: ${props.partitionKey.type}) {`);
+      client.open(
+        `public async deleteItem(partitionKey: ${props.partitionKey.type}) {`,
+      );
     }
     client.line('let keyObj: { [key: string]: any } = {};');
     client.line(`keyObj.${props.partitionKey.key} = partitionKey;`);
@@ -81,13 +92,17 @@ export class LazyDynamoDBClient extends Project {
     client.close('}');
     client.line('');
     // create update item function
-    client.open(`public async updateItem(partitionKey: ${props.partitionKey.type}, item: ${this.entityName}) {`);
+    client.open(
+      `public async updateItem(partitionKey: ${props.partitionKey.type}, item: ${this.entityName}) {`,
+    );
     client.line('let expAttrVal: { [key: string]: any } = {};');
-    client.line('let upExp = \'set \';');
+    client.line("let upExp = 'set ';");
     client.line('let expAttrNames: { [key: string]: string } = {};');
     if (props && props.fields) {
       for (const field of props.fields) {
-        client.open(`if (item.${field.key} !== null && item.${field.key} !== undefined) {`);
+        client.open(
+          `if (item.${field.key} !== null && item.${field.key} !== undefined) {`,
+        );
         client.line(`expAttrVal[\':${field.key}\'] = item.${field.key};`);
         client.line(`upExp = upExp + \'#${field.key} = :${field.key}\,';`);
         client.line(`expAttrNames[\'#${field.key}\'] = \'${field.key}\';`);

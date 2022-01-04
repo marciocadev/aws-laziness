@@ -3,14 +3,15 @@
 import { Project, SourceCode } from 'projen';
 import { LazyDynamoDBEntityProps } from '../../../aws/aws-dynamodb/lazy-entity';
 
-export class LazyDynamoDBSchema extends Project {
+export class LazyDynamoDBModel extends Project {
   readonly entityName: string;
   readonly pathFile?: string;
 
   constructor(entityName: string, pathFile?: string) {
     super({ name: entityName, outdir: pathFile });
     if (entityName.length >= 1) {
-      this.entityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
+      this.entityName =
+        entityName.charAt(0).toUpperCase() + entityName.slice(1);
     } else {
       this.entityName = entityName.toUpperCase();
     }
@@ -25,7 +26,9 @@ export class LazyDynamoDBSchema extends Project {
     if (props.partitionKey.description) {
       model.line(`* ${props.partitionKey.description}`);
     }
-    model.line(`* **_${props.partitionKey.key}_** field is the **partition key**`);
+    model.line(
+      `* **_${props.partitionKey.key}_** field is the **partition key**`,
+    );
     model.line('*');
     model.line('* @attribute');
     model.line('*/');
@@ -39,7 +42,9 @@ export class LazyDynamoDBSchema extends Project {
       model.line('*');
       model.line('* @attribute');
       model.line('*/');
-      model.line(`readonly ${props.sortKey.key}: ${props.sortKey.type}; // sort key`);
+      model.line(
+        `readonly ${props.sortKey.key}: ${props.sortKey.type}; // sort key`,
+      );
     }
     if (props.fields) {
       for (const field of props.fields) {

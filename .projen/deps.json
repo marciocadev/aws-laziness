@@ -17,6 +17,10 @@
       "type": "build"
     },
     {
+      "name": "@types/inquirer",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -27,6 +31,10 @@
     {
       "name": "@types/node",
       "version": "^12",
+      "type": "build"
+    },
+    {
+      "name": "@types/typescript",
       "type": "build"
     },
     {
@@ -75,10 +83,6 @@
       "type": "build"
     },
     {
-      "name": "prettier",
-      "type": "build"
-    },
-    {
       "name": "projen",
       "type": "build"
     },
@@ -115,6 +119,10 @@
     },
     {
       "name": "fs-extra",
+      "type": "bundled"
+    },
+    {
+      "name": "inquirer",
       "type": "bundled"
     },
     {

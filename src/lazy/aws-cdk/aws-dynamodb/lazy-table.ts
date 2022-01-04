@@ -10,7 +10,8 @@ export class LazyDynamoDBTable extends Project {
   constructor(entityName: string, pathFile?: string) {
     super({ name: entityName, outdir: pathFile });
     if (entityName.length >= 1) {
-      this.entityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
+      this.entityName =
+        entityName.charAt(0).toUpperCase() + entityName.slice(1);
     } else {
       this.entityName = entityName.toUpperCase();
     }
@@ -21,9 +22,11 @@ export class LazyDynamoDBTable extends Project {
     const basename = this.entityName.toLowerCase();
     let file = `constructs/${basename}/table.ts`;
     const table = new SourceCode(this, file);
-    table.line('import { Table, TableProps, AttributeType } from \'aws-cdk-lib/aws-dynamodb\';');
-    table.line('import { Function } from \'aws-cdk-lib/aws-lambda\';');
-    table.line('import { Construct } from \'constructs\';');
+    table.line(
+      "import { Table, TableProps, AttributeType } from 'aws-cdk-lib/aws-dynamodb';",
+    );
+    table.line("import { Function } from 'aws-cdk-lib/aws-lambda';");
+    table.line("import { Construct } from 'constructs';");
     table.line('');
     table.open('export enum GrantType {');
     table.line('Read = 1,');
@@ -32,7 +35,9 @@ export class LazyDynamoDBTable extends Project {
     table.close('}');
     table.line('');
     table.line('/**');
-    table.line(`* A Cloudformation \'AWS::DynamoDB::Table\' for **${this.name}** data`);
+    table.line(
+      `* A Cloudformation \'AWS::DynamoDB::Table\' for **${this.name}** data`,
+    );
     table.line('*');
     table.line('* @cloudformationResource AWS::DynamoDB::Table');
     table.line('*/');
@@ -43,7 +48,9 @@ export class LazyDynamoDBTable extends Project {
     table.line('* @param scope - scope in which this resource is defined');
     table.line('* @param id    - scoped id of the resource');
     table.line('*/');
-    table.open('constructor(scope: Construct, id: string, props?: TableProps) {');
+    table.open(
+      'constructor(scope: Construct, id: string, props?: TableProps) {',
+    );
     table.open('super(scope, id, props ? props : {');
     table.open('partitionKey: {');
     table.line(`name: '${props.partitionKey.key}',`);
