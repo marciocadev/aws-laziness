@@ -6,8 +6,8 @@ import { program, Argument } from 'commander';
 import { LazyDynamoDBSchema } from '../../lazy/aws-sdk/v3/aws-dynamodb/lazy-schema';
 
 program
-  .command('dynamodb-schema')
-  .alias('db-schema')
+  .command('dynamodb-client')
+  .alias('db-client')
   .addArgument(new Argument('<name>', 'data model name'))
   .option('-p, --path <path>', 'path to create files')
   .option('-j, --json-model <file>', 'json file with description of the table')
