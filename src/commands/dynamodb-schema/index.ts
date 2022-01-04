@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import * as fs from 'fs';
 import * as path from 'path';
 import { program, Argument } from 'commander';
+import * as fs from 'fs-extra';
 import { LazyDynamoDBSchema } from '../../lazy/aws-sdk/v3/aws-dynamodb/lazy-schema';
 
 program
@@ -27,10 +27,12 @@ program
 
       if (options.path) {
         fs.unlinkSync(options.path + '/.gitignore');
-        fs.rmdirSync(options.path + '/.projen', { recursive: true });
+        fs.removeSync(options.path + '/.projen');
+        //fs.rmdirSync(options.path + '/.projen', { recursive: true });
       } else {
         fs.unlinkSync('.gitignore');
-        fs.rmdirSync('.projen', { recursive: true });
+        fs.removeSync('.projen');
+        //fs.rmdirSync('.projen', { recursive: true });
       }
     }
   });
