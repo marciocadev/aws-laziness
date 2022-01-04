@@ -7,8 +7,8 @@ export class LazyDynamoDBSchema extends Project {
   readonly entityName: string;
   readonly pathFile?: string;
 
-  constructor(title: string, entityName: string, pathFile?: string) {
-    super({ name: title, outdir: pathFile });
+  constructor(entityName: string, pathFile?: string) {
+    super({ name: entityName, outdir: pathFile });
     if (pathFile) this.pathFile = pathFile;
     if (entityName.length >= 1) {
       this.entityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
@@ -22,7 +22,7 @@ export class LazyDynamoDBSchema extends Project {
     const basename = this.entityName.toLowerCase();
     let file = '';
     if (this.pathFile) {
-      file = `${this.pathFile}/${basename}-package/lambda-fns/${basename}/model.ts`;
+      file = `${this.pathFile}/lambda-fns/${basename}/model.ts`;
     } else {
       file = `lambda-fns/${basename}/model.ts`;
     }

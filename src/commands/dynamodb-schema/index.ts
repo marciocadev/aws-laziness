@@ -19,15 +19,22 @@ program
     }
     console.log(name);
     console.log(options);
-    // console.log(command);
 
     let data = undefined;
     if (options.jsonModel) {
       data = JSON.parse(fs.readFileSync(path.resolve(options.jsonModel), 'utf8'));
 
-      const lazy = new LazyDynamoDBSchema('schema', name, options.path);
+      const lazy = new LazyDynamoDBSchema(name, options.path);
       lazy.createModel(data);
       lazy.synth();
+
+      if (options.path) {
+        fs.unlinkSync(options.path + '/.gitignore');
+        fs.rmdirSync(options.path + '/.projen', { recursive: true });
+      } else {
+        fs.unlinkSync('.gitignore');
+        fs.rmdirSync('.projen', { recursive: true });
+      }
     }
     console.log(data);
   });
