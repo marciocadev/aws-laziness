@@ -19,7 +19,7 @@ export class LazyDynamoDBClient extends Project {
   createClient(props: LazyDynamoDBEntityProps) {
     const env = `${this.entityName.toUpperCase()}_TABLE_NAME`;
     const basename = this.entityName.toLowerCase();
-    let file = `lambda-fns/${basename}/model.ts`;
+    let file = `lambda-fns/${basename}/client.ts`;
     const client = new SourceCode(this, file);
     // imports dependencies and iniciate the class
     client.open('import {');

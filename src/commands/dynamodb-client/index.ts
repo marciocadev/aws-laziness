@@ -3,7 +3,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { program, Argument } from 'commander';
-import { LazyDynamoDBSchema } from '../../lazy/aws-sdk/v3/aws-dynamodb/lazy-schema';
+import { LazyDynamoDBClient } from '../../lazy/aws-sdk/v3/aws-dynamodb/lazy-client';
 
 program
   .command('dynamodb-client')
@@ -21,8 +21,8 @@ program
     if (options.jsonModel) {
       data = JSON.parse(fs.readFileSync(path.resolve(options.jsonModel), 'utf8'));
 
-      const lazy = new LazyDynamoDBSchema(name, options.path);
-      lazy.createModel(data);
+      const lazy = new LazyDynamoDBClient(name, options.path);
+      lazy.createClient(data);
       lazy.synth();
 
       if (options.path) {
