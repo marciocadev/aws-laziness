@@ -21,8 +21,7 @@ export class LazyDynamoDBTable extends Project {
     const basename = this.entityName.toLowerCase();
     let file = `constructs/${basename}/table.ts`;
     const table = new SourceCode(this, file);
-    table.line('import { RemovalPolicy } from \'aws-cdk-lib\';');
-    table.line('import { Table, AttributeType } from \'aws-cdk-lib/aws-dynamodb\';');
+    table.line('import { Table, TableProps, AttributeType } from \'aws-cdk-lib/aws-dynamodb\';');
     table.line('import { Function } from \'aws-cdk-lib/aws-lambda\';');
     table.line('import { Construct } from \'constructs\';');
     table.line('');
