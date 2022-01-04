@@ -28,11 +28,9 @@ program
       if (options.path) {
         fs.unlinkSync(options.path + '/.gitignore');
         fs.removeSync(options.path + '/.projen');
-        //fs.rmdirSync(options.path + '/.projen', { recursive: true });
       } else {
         fs.unlinkSync('.gitignore');
         fs.removeSync('.projen');
-        //fs.rmdirSync('.projen', { recursive: true });
       }
     }
   });
