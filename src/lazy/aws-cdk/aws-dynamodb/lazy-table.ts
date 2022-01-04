@@ -43,7 +43,7 @@ export class LazyDynamoDBTable extends Project {
     table.line('* @param scope - scope in which this resource is defined');
     table.line('* @param id    - scoped id of the resource');
     table.line('*/');
-    table.open('constructor(scope: Construct, id: string, props? TableProps) {');
+    table.open('constructor(scope: Construct, id: string, props?: TableProps) {');
     table.open('super(scope, id, props ? props : {');
     table.open('partitionKey: {');
     table.line(`name: '${props.partitionKey.key}',`);
