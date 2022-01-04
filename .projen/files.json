@@ -12,6 +12,7 @@
     ".gitpod.yml",
     ".mergify.yml",
     ".npmignore",
+    ".prettierignore",
     ".prettierrc.json",
     ".projen/deps.json",
     ".projen/files.json",
