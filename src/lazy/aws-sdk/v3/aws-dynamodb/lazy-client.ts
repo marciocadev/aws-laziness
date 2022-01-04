@@ -70,6 +70,7 @@ export class LazyDynamoDBClient extends Project {
     client.close('};');
     client.line('return this.client.send(new DeleteItemCommand(input));');
     client.close('}');
+    client.line('');
     // create put item function
     client.open(`public async putItem(item: ${this.entityName}) {`);
     client.open('const input: PutItemCommandInput = {');
