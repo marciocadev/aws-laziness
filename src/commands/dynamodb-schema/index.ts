@@ -19,7 +19,6 @@ program
     }
     console.log(name);
     console.log(options);
-    // console.log(command);
 
     let data = undefined;
     if (options.jsonModel) {
