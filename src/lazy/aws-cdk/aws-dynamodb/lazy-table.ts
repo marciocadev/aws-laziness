@@ -19,7 +19,7 @@ export class LazyDynamoDBTable extends Project {
   createTable(props: LazyDynamoDBEntityProps) {
     const env = `${this.entityName.toUpperCase()}_TABLE_NAME`;
     const basename = this.entityName.toLowerCase();
-    let file = `constructs/${basename}/model.ts`;
+    let file = `constructs/${basename}/table.ts`;
     const table = new SourceCode(this, file);
     table.line('import { RemovalPolicy } from \'aws-cdk-lib\';');
     table.line('import { Table, AttributeType } from \'aws-cdk-lib/aws-dynamodb\';');
@@ -44,8 +44,8 @@ export class LazyDynamoDBTable extends Project {
     table.line('* @param scope - scope in which this resource is defined');
     table.line('* @param id    - scoped id of the resource');
     table.line('*/');
-    table.open('constructor(scope: Construct, id: string) {');
-    table.open('super(scope, id, {');
+    table.open('constructor(scope: Construct, id: string, props? TableProps) {');
+    table.open('super(scope, id, props ? props : {');
     table.open('partitionKey: {');
     table.line(`name: '${props.partitionKey.key}',`);
     if (props.partitionKey.type === 'number') {
@@ -68,7 +68,7 @@ export class LazyDynamoDBTable extends Project {
       }
       table.close('},');
     }
-    table.line('removalPolicy: RemovalPolicy.DESTROY,');
+    // table.line('removalPolicy: RemovalPolicy.DESTROY,');
     table.close('});');
     table.close('}');
     table.line('');
