@@ -22,8 +22,8 @@ export class LazyDynamoDBSchema extends Project {
     const model = new SourceCode(this, file);
     model.open(`export interface ${this.entityName} {`);
     model.line('/**');
-    if (props.partitionKey.describe) {
-      model.line(`* ${props.partitionKey.describe}`);
+    if (props.partitionKey.description) {
+      model.line(`* ${props.partitionKey.description}`);
     }
     model.line(`* **_${props.partitionKey.key}_** field is the **partition key**`);
     model.line('*');
@@ -32,8 +32,8 @@ export class LazyDynamoDBSchema extends Project {
     model.line(`readonly ${props.partitionKey.key}: string; // key`);
     if (props.sortKey) {
       model.line('/**');
-      if (props.sortKey.describe) {
-        model.line(`* ${props.sortKey.describe}`);
+      if (props.sortKey.description) {
+        model.line(`* ${props.sortKey.description}`);
       }
       model.line(`* **_${props.sortKey.key}_** field is the **sort key**`);
       model.line('*');
@@ -44,8 +44,8 @@ export class LazyDynamoDBSchema extends Project {
     if (props.fields) {
       for (const field of props.fields) {
         model.line('/**');
-        if (field.describe) {
-          model.line(`* ${field.describe}`);
+        if (field.description) {
+          model.line(`* ${field.description}`);
         }
         model.line('*');
         model.line('* @attribute');
