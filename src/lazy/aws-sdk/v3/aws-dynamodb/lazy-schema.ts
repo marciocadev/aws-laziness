@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Project, SourceCode } from 'projen';
-import { LazyDynamoDBEntityProps } from './lazy-entity';
+import { LazyDynamoDBEntityProps } from '../../../aws/aws-dynamodb/lazy-entity';
 
 export class LazyDynamoDBSchema extends Project {
   readonly entityName: string;
@@ -9,7 +9,6 @@ export class LazyDynamoDBSchema extends Project {
 
   constructor(entityName: string, pathFile?: string) {
     super({ name: entityName, outdir: pathFile });
-    // if (pathFile) this.pathFile = pathFile;
     if (entityName.length >= 1) {
       this.entityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
     } else {
@@ -18,14 +17,8 @@ export class LazyDynamoDBSchema extends Project {
   }
 
   createModel(props: LazyDynamoDBEntityProps) {
-    console.log(props);
     const basename = this.entityName.toLowerCase();
-    let file = '';
-    // if (this.pathFile) {
-    //   file = `${this.pathFile}/lambda-fns/${basename}/model.ts`;
-    // } else {
-    file = `lambda-fns/${basename}/model.ts`;
-    // }
+    let file = `lambda-fns/${basename}/model.ts`;
     const model = new SourceCode(this, file);
     model.open(`export interface ${this.entityName} {`);
     model.line('/**');

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>LazyDynamoDBEntityProps | aws-laziness</title>
+	<title>Entity | aws-laziness</title>
 	<meta name="description" content="Documentation for aws-laziness">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">aws-laziness</a>
 				</li>
 				<li>
-					<a href="../modules/lazy_aws_sdk_v3_aws_dynamodb_lazy_entity.html">lazy/aws-sdk/v3/aws-dynamodb/lazy-entity</a>
+					<a href="../modules/lazy_aws_aws_dynamodb_entity.html">lazy/aws/aws-dynamodb/entity</a>
 				</li>
 				<li>
-					<a href="lazy_aws_sdk_v3_aws_dynamodb_lazy_entity.LazyDynamoDBEntityProps.html">LazyDynamoDBEntityProps</a>
+					<a href="lazy_aws_aws_dynamodb_entity.Entity.html">Entity</a>
 				</li>
 			</ul>
-			<h1>Interface LazyDynamoDBEntityProps</h1>
+			<h1>Interface Entity</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">LazyDynamoDBEntityProps</span>
+						<span class="target">Entity</span>
 					</li>
 				</ul>
 			</section>
@@ -83,9 +83,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="lazy_aws_sdk_v3_aws_dynamodb_lazy_entity.LazyDynamoDBEntityProps.html#fields" class="tsd-kind-icon">fields</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="lazy_aws_sdk_v3_aws_dynamodb_lazy_entity.LazyDynamoDBEntityProps.html#partitionKey" class="tsd-kind-icon">partition<wbr>Key</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="lazy_aws_sdk_v3_aws_dynamodb_lazy_entity.LazyDynamoDBEntityProps.html#sortKey" class="tsd-kind-icon">sort<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="lazy_aws_aws_dynamodb_entity.Entity.html#describe" class="tsd-kind-icon">describe</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="lazy_aws_aws_dynamodb_entity.Entity.html#key" class="tsd-kind-icon">key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="lazy_aws_aws_dynamodb_entity.Entity.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,23 +94,23 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="fields" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> fields</h3>
-					<div class="tsd-signature tsd-kind-icon">fields<span class="tsd-signature-symbol">:</span> <a href="lazy_aws_sdk_v3_entity.Entity.html" class="tsd-signature-type" data-tsd-kind="Interface">Entity</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="describe" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> describe</h3>
+					<div class="tsd-signature tsd-kind-icon">describe<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="partitionKey" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> partition<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">partition<wbr>Key<span class="tsd-signature-symbol">:</span> <a href="lazy_aws_sdk_v3_entity.Entity.html" class="tsd-signature-type" data-tsd-kind="Interface">Entity</a></div>
+					<a name="key" class="tsd-anchor"></a>
+					<h3>key</h3>
+					<div class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="sortKey" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> sort<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">sort<wbr>Key<span class="tsd-signature-symbol">:</span> <a href="lazy_aws_sdk_v3_entity.Entity.html" class="tsd-signature-type" data-tsd-kind="Interface">Entity</a></div>
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
@@ -125,14 +125,17 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/common.html">common</a>
 					</li>
-					<li class="current tsd-kind-module">
-						<a href="../modules/lazy_aws_sdk_v3_aws_dynamodb_lazy_entity.html">lazy/aws-<wbr>sdk/v3/aws-<wbr>dynamodb/lazy-<wbr>entity</a>
+					<li class=" tsd-kind-module">
+						<a href="../modules/lazy_aws_cdk_aws_dynamodb_lazy_table.html">lazy/aws-<wbr>cdk/aws-<wbr>dynamodb/lazy-<wbr>table</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/lazy_aws_sdk_v3_aws_dynamodb_lazy_schema.html">lazy/aws-<wbr>sdk/v3/aws-<wbr>dynamodb/lazy-<wbr>schema</a>
 					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/lazy_aws_aws_dynamodb_entity.html">lazy/aws/aws-<wbr>dynamodb/entity</a>
+					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/lazy_aws_sdk_v3_entity.html">lazy/aws-<wbr>sdk/v3/entity</a>
+						<a href="../modules/lazy_aws_aws_dynamodb_lazy_entity.html">lazy/aws/aws-<wbr>dynamodb/lazy-<wbr>entity</a>
 					</li>
 				</ul>
 			</nav>
@@ -141,16 +144,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="lazy_aws_sdk_v3_aws_dynamodb_lazy_entity.LazyDynamoDBEntityProps.html" class="tsd-kind-icon">Lazy<wbr>DynamoDBEntity<wbr>Props</a>
+						<a href="lazy_aws_aws_dynamodb_entity.Entity.html" class="tsd-kind-icon">Entity</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="lazy_aws_sdk_v3_aws_dynamodb_lazy_entity.LazyDynamoDBEntityProps.html#fields" class="tsd-kind-icon">fields</a>
+								<a href="lazy_aws_aws_dynamodb_entity.Entity.html#describe" class="tsd-kind-icon">describe</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="lazy_aws_sdk_v3_aws_dynamodb_lazy_entity.LazyDynamoDBEntityProps.html#partitionKey" class="tsd-kind-icon">partition<wbr>Key</a>
+								<a href="lazy_aws_aws_dynamodb_entity.Entity.html#key" class="tsd-kind-icon">key</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="lazy_aws_sdk_v3_aws_dynamodb_lazy_entity.LazyDynamoDBEntityProps.html#sortKey" class="tsd-kind-icon">sort<wbr>Key</a>
+								<a href="lazy_aws_aws_dynamodb_entity.Entity.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
