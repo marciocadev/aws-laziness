@@ -37,7 +37,7 @@ const project = new typescript.TypeScriptProject({
   mutableBuild: true,
   releaseFailureIssue: true,
 
-  prettier: true,
+  // prettier: true,
   codeCov: true,
   gitpod: true,
   jestOptions: {

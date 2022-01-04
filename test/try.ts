@@ -1,7 +1,7 @@
-import { LazyDynamoDBModel } from "../src/lazy/aws-sdk/v3/aws-dynamodb/lazy-model";
+import { LazyDynamoDBModel } from '../src/lazy/aws-sdk/v3/aws-dynamodb/lazy-model';
 
-const lazy = new LazyDynamoDBModel("schema-projen", "Test");
-lazy.createModel({ partitionKey: { key: "test", type: "string" } });
+const lazy = new LazyDynamoDBModel('schema-projen', 'Test');
+lazy.createModel({ partitionKey: { key: 'test', type: 'string' } });
 console.log(lazy);
 
 // Project

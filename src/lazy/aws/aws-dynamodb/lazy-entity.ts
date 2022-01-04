@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { Entity } from "./entity";
+import { Entity } from './entity';
 
 export interface LazyDynamoDBEntityProps {
   readonly partitionKey: Entity;

@@ -42,8 +42,6 @@ junit.xml
 !/.github/workflows/release.yml
 !/.mergify.yml
 !/.github/pull_request_template.md
-!/.prettierignore
-!/.prettierrc.json
 !/test/
 !/tsconfig.json
 !/tsconfig.dev.json
