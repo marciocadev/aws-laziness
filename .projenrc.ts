@@ -43,7 +43,7 @@ const project = new typescript.TypeScriptProject({
   jestOptions: {
     coverageText: false,
   },
-  docgen: true,
+  // docgen: true,
   eslint: true,
   tsconfig: {
     compilerOptions: {
