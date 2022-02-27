@@ -39,13 +39,15 @@ export class LazyDynamoDBClient extends Project {
     );
     client.line('');
     // create get item function
+    const partitionKeyType = props.partitionKey.type == 'number' ? 'number' : 'string';
     if (props && props.sortKey) {
+      const sortKeyType = props.sortKey.type == 'number' ? 'number' : 'string';
       client.open(
-        `public async getItem(partitionKey: ${props.partitionKey.type}, sortKey: ${props.sortKey.type}) {`,
+        `public async getItem(partitionKey: ${partitionKeyType}, sortKey: ${sortKeyType}) {`,
       );
     } else {
       client.open(
-        `public async getItem(partitionKey: ${props.partitionKey.type}) {`,
+        `public async getItem(partitionKey: ${partitionKeyType}) {`,
       );
     }
     client.line('let keyObj: { [key: string]: any } = {};');
@@ -62,18 +64,20 @@ export class LazyDynamoDBClient extends Project {
     client.line('');
     // create delete item function
     if (props && props.sortKey) {
+      const sortKeyType = props.sortKey.type == 'number' ? 'number' : 'string';
       client.open(
-        `public async deleteItem(partitionKey: ${props.partitionKey.type}, sortKey: ${props.sortKey.type}) {`,
+        `public async deleteItem(partitionKey: ${partitionKeyType}, sortKey: ${sortKeyType}) {`,
       );
     } else {
       client.open(
-        `public async deleteItem(partitionKey: ${props.partitionKey.type}) {`,
+        `public async deleteItem(partitionKey: ${partitionKeyType}) {`,
       );
     }
     client.line('let keyObj: { [key: string]: any } = {};');
-    client.line(`keyObj.${props.partitionKey.key} = partitionKey;`);
+    client.line(`keyObj.${partitionKeyType} = partitionKey;`);
     if (props && props.sortKey) {
-      client.line(`keyObj.${props.sortKey.key} = sortKey;`);
+      const sortKeyType = props.sortKey.type == 'number' ? 'number' : 'string';
+      client.line(`keyObj.${sortKeyType} = sortKey;`);
     }
     client.open('const input: DeleteItemCommandInput = {');
     client.line(`TableName: process.env.${env},`);
@@ -93,7 +97,7 @@ export class LazyDynamoDBClient extends Project {
     client.line('');
     // create update item function
     client.open(
-      `public async updateItem(partitionKey: ${props.partitionKey.type}, item: ${this.entityName}) {`,
+      `public async updateItem(partitionKey: ${partitionKeyType}, item: ${this.entityName}) {`,
     );
     client.line('let expAttrVal: { [key: string]: any } = {};');
     client.line("let upExp = 'set ';");
