@@ -32,7 +32,7 @@ export class LazyDynamoDBModel extends Project {
     model.line('*');
     model.line('* @attribute');
     model.line('*/');
-    const partitionKeyType = props.partitionKey.type == "number" ? "number" : "string";
+    const partitionKeyType = props.partitionKey.type == 'number' ? 'number' : 'string';
     model.line(`readonly ${props.partitionKey.key}: ${partitionKeyType}; // key`);
     if (props.sortKey) {
       model.line('/**');
@@ -43,7 +43,7 @@ export class LazyDynamoDBModel extends Project {
       model.line('*');
       model.line('* @attribute');
       model.line('*/');
-      const sortKeyType = props.sortKey.type == "number" ? "number" : "string";
+      const sortKeyType = props.sortKey.type == 'number' ? 'number' : 'string';
       model.line(
         `readonly ${props.sortKey.key}: ${sortKeyType}; // sort key`,
       );
@@ -57,7 +57,7 @@ export class LazyDynamoDBModel extends Project {
         model.line('*');
         model.line('* @attribute');
         model.line('*/');
-        let fieldType = field.type == "number" ? "number" : "string";
+        let fieldType = field.type == 'number' ? 'number' : 'string';
         model.line(`readonly ${field.key}?: ${fieldType};`);
       }
     }
