@@ -61,6 +61,10 @@ program
 
         fs.unlinkSync(answers.path + '/.gitignore');
         fs.removeSync(answers.path + '/.projen');
+
+        console.log("@aws-sdk/client-dynamodb");
+        console.log("@aws-sdk/util-dynamodb");
+        console.log("aws-cdk-lib/aws-dynamodb");
       })
       .catch((error) => {
         console.error(error);
