@@ -9,3 +9,13 @@
 ![Commit activity](https://img.shields.io/github/commit-activity/w/marciocadev/aws-laziness)
 
 Creating source code for lazy people **(this is US :wink:)**
+
+## db-model example
+```
+{
+  "partitionKey": {
+    "key": "uuid", // name of partition key
+    "type": "string", // type of partition key (string, number, binary)
+  }
+}
+```
