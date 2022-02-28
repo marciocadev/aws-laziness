@@ -30,6 +30,7 @@ const project = new typescript.TypeScriptProject({
     'cli-color',
     'node-notifier',
     'commander',
+    'colors',
     'inquirer',
     'fs-extra',
   ],

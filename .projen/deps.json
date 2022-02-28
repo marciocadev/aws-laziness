@@ -109,6 +109,10 @@
       "type": "bundled"
     },
     {
+      "name": "colors",
+      "type": "bundled"
+    },
+    {
       "name": "commander",
       "type": "bundled"
     },
