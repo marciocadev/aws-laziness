@@ -11,11 +11,28 @@
 Creating source code for lazy people **(this is US :wink:)**
 
 ## db-model example
+* **key**, **type** - obrigatory fields
+* **description** - not mandatory field
+
+### User table example
 ```
 {
-  "partitionKey": {
-    "key": "uuid", // name of partition key
-    "type": "string", // type of partition key (string, number, binary)
-  }
+  "partitionKey": { "key": "UserId", "type": "string", "description": "User identification" },
+  "fields": [
+    { "key": "UserName", "type": "string", "description": "User name" }
+  ]
+}
+```
+### GameScore table example
+```
+{
+  "partitionKey": { "key": "UserId", "type": "string" },
+  "sortKey": { "key": "GameTitle", "type": "string", "description": "Sort Key" },
+  "fields": [
+    { "key": "TopScore", "type": "number" },
+    { "key": "TopScoreDateTime", "type": "string" },
+    { "key": "Wins", "type": "number", "description": "Number of player wins" },
+    { "key": "Losses", "type": "number", "description": "Number of player losses" }
+    ]
 }
 ```
