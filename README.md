@@ -19,3 +19,6 @@ Creating source code for lazy people **(this is US :wink:)**
   }
 }
 ```
+
+## Install local
+* projen build && sudo npm install -g ./dist/js/aws-laziness-0.0.0.tgz
