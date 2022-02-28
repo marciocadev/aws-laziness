@@ -59,7 +59,7 @@ program
           console.log('');
           console.log('### Or if you use Projen (I highly recommend) add the   ###'.blue.bold);
           console.log('### libraries to \'deps\' field on projenrc file and run  ###'.blue.bold);
-          console.log('### the command \'projen build\' to add the dependencies  ###'.blue.bold);
+          console.log('### the \'projen\' command to add the dependencies        ###'.blue.bold);
           console.log('{'.bold);
           console.log('  deps: ['.bold);
           console.log('    \'@aws-sdk/client-dynamodb\','.bold);
@@ -80,7 +80,7 @@ program
           console.log('');
           console.log('### Or if you use Projen (I highly recommend) add the   ###'.blue.bold);
           console.log('### libraries to \'deps\' field on projenrc file and run  ###'.blue.bold);
-          console.log('### the command \'projen build\' to add the dependencies  ###'.blue.bold);
+          console.log('### the \'projen\' command to add the dependencies        ###'.blue.bold);
           console.log('{'.bold);
           console.log('  deps: ['.bold);
           console.log('    \'@aws-sdk/client-dynamodb\','.bold);
