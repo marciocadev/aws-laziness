@@ -27,7 +27,7 @@ Creating source code for lazy people **(this is US :wink:)**
 ```
 {
   "partitionKey": { "key": "UserId", "type": "string" },
-  "sortKey": { "key": "GameTitle", "type": "string", "description": "Sort Key" },
+  "sortKey": { "key": "GameTitle", "type": "string", "description": "Game title" },
   "fields": [
     { "key": "TopScore", "type": "number" },
     { "key": "TopScoreDateTime", "type": "string" },
