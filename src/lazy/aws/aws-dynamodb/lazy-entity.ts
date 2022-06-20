@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { Entity } from './entity';
 
 export interface LazyDynamoDBEntityProps {
