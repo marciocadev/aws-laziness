@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { Project, SourceCode } from 'projen';
 import { LazyDynamoDBEntityProps } from '../../../aws/aws-dynamodb/lazy-entity';
 
